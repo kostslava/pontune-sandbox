@@ -1,0 +1,18 @@
+{
+  "name": "local-compiler",
+  "version": "1.0.0",
+  "description": "Pontune sandbox — self-hosted Piston + React dashboard",
+  "scripts": {
+    "piston:up": "docker compose up -d",
+    "piston:down": "docker compose down",
+    "piston:setup": "bash scripts/setup-piston.sh",
+    "piston:logs": "docker logs -f piston_api",
+    "client": "npm run dev --prefix client",
+    "dev": "npm run client",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

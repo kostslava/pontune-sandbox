@@ -1,0 +1,21 @@
+services:
+  piston:
+    image: ghcr.io/engineer-man/piston
+    container_name: piston_api
+    platform: linux/amd64
+    restart: unless-stopped
+    privileged: true
+    ports:
+      - "2000:2000"
+    volumes:
+      - ./piston-data/packages:/piston/packages
+    tmpfs:
+      - /tmp:exec
+    environment:
+      # Piston treats -1 as broken (instant kill). Use large caps for dev.
+      PISTON_RUN_TIMEOUT: "3600000"
+      PISTON_RUN_CPU_TIME: "3600000"
+      PISTON_COMPILE_TIMEOUT: "30000"
+      PISTON_COMPILE_CPU_TIME: "30000"
+      PISTON_OUTPUT_MAX_SIZE: "131072"
+      PISTON_RUN_MEMORY_LIMIT: "-1"

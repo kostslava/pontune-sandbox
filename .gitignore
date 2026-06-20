@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+client/node_modules/
+
+# Build output
+client/dist/
+
+# Local config (copy from client/.env.example)
+client/.env
+.env
+.env.local
+
+# Piston runtime data (installed language packages)
+piston-data/*
+!piston-data/.gitkeep
+
+# Ephemeral code execution sandboxes
+sandbox/
+
+# OS & editor
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Logs
+*.log
+npm-debug.log*
